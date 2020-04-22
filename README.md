@@ -37,6 +37,21 @@ Follow these steps for completing your project.
 
 Your challenge for this module: write tests for both the `App.js` component and the `Episodesjs` component. Take note of where the state is being managed, where the async call is, and where different data peices are being rendered. Understanding all of this will be important so you know how to test each component.
 
+
+### Tests
+
+**App.js**
+
+- Is the app rendering with show content automatically?
+- Is it showing an error while show content is loaded?
+- Is it showing a list of seasons to choose from?
+- Is it showing the episodes when a season value is selected?
+- Is it changing episodes when a different season value is selected?
+
+**Episode.js**
+
+- Is it visualizing the content for an episode?
+
 **Moving the async call**
 
 The async call being inside the component makes it hard to test the asynchronous nature of the component. Let's move the async function into an `/api` directory so we can easily mock that function and make the async tests easier.
