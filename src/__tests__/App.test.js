@@ -11,7 +11,7 @@ import App from '../App'
 import { fetchShow as mockFetchShow } from '../api/fetchShow'
 
 jest.mock('../api/fetchShow')    
-const mockData = {
+export const mockData = {
     data: {
             id: 2993,
             url: 'http://www.tvmaze.com/shows/2993/stranger-things',

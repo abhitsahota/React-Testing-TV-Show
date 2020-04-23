@@ -24,8 +24,6 @@ export default function App() {
 
   const handleSelect = e => {
     setSelectedSeason(e.value);
-    console.log(selectedSeason)
-    console.log(episodes)
   };
 
   if (!show) {
@@ -34,6 +32,7 @@ export default function App() {
 
   return (
     <div className="App">
+    {console.log(seasons)}
       <img className="poster-img" src={show.image.original} alt={show.name} />
       <h1>{show.name}</h1>
       {parse(show.summary)}

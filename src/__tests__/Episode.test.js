@@ -49,7 +49,7 @@ const episodes = [
     }
   ]
 
-test('Episode content is rerender when a season is selected', () => {
+test('Episode content is rendered when a season is selected', () => {
     // console.log(mockData.data._embedded.episodes)
     const { getAllByText } = render( <Episodes episodes={episodes} /> )
 
