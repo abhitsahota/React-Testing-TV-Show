@@ -24,6 +24,8 @@ export default function App() {
 
   const handleSelect = e => {
     setSelectedSeason(e.value);
+    console.log(selectedSeason)
+    console.log(episodes)
   };
 
   if (!show) {

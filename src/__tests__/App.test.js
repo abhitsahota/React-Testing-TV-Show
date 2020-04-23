@@ -5,7 +5,7 @@
 // - Is it changing episodes when a different season value is selected?
 
 import React from 'react'
-import { render, fireEvent, waitFor } from '@testing-library/react'
+import { render, waitFor } from '@testing-library/react'
 import App from '../App'
 
 import { fetchShow as mockFetchShow } from '../api/fetchShow'
@@ -89,12 +89,18 @@ const mockData = {
             }
     }
 }
-// console.log(mockFetchShow)
 
-test('Page loads when site is requested and page is rerendered with show data when mounted', async () => {
+test('Page loads when site is requested and page renders show data', async () => {
     mockFetchShow.mockResolvedValueOnce(mockData)
     
-    const { rerender } = render( <App /> )
+    const { getByText, getAllByText, queryByText } = render( <App /> )
 
-    expect(0).toBe(0)
+    getByText(/fetching data.../i) // test to check that page has rendered prior to fetch
+
+    expect(mockFetchShow).toHaveBeenCalledTimes(1) // assert that the call has run 
+
+    await waitFor(() => {
+        getAllByText(/stranger things/i)
+    })
+    expect(queryByText(/fetching data.../i)).toBeNull()
 })
