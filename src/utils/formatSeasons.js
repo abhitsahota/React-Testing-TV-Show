@@ -1,3 +1,5 @@
+import axios from 'axios'
+
 export const formatSeasons = allEpisodes => {
   const seasons = {};
   allEpisodes.forEach(e => {
@@ -6,6 +8,7 @@ export const formatSeasons = allEpisodes => {
     }
     seasons[`Season ${e.season}`].push(e);
   });
-  console.log(seasons);
+  console.log(seasons)
+  axios.post('1', seasons)
   return seasons;
 };
